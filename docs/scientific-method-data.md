@@ -62,12 +62,6 @@ Goal criteria are read from `goals.json` next to the executable (or repo root fa
 npm run win:dist
 ```
 
-If you get Windows setup/script errors, run:
-
-```bash
-npm.cmd run win:doctor
-```
-
 Creates `dist/PokeChessScience/` with:
 
 - `pokechess-science.cmd`
@@ -90,28 +84,6 @@ npm run build:win
 ```
 
 Builds with `esbuild + pkg` targeting `node18-win-x64`.
-
-
-## Windows troubleshooting
-
-Common causes and fixes:
-
-- `Missing script: "win:dist"`
-  - You are likely in an outdated/wrong folder copy.
-  - Run `npm run` and check that `win:dist` exists.
-- `Cannot find module ... gen\science\build-windows-dist.js`
-  - Your copy is missing new science scripts. Update to latest repository version.
-- PowerShell blocks `npm.ps1`
-  - Use `npm.cmd` (recommended): `npm.cmd run win:dist`
-  - Or bypass for current shell only: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-
-Quick diagnostic:
-
-```bash
-npm.cmd run win:doctor
-```
-
-This checks scripts, required files, and Node/npm availability and prints actionable next steps.
 
 ## Smoke test
 

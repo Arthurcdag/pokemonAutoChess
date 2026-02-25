@@ -64,8 +64,7 @@
     "win:dist": "node gen/science/build-windows-dist.js",
     "build:bundle": "npx esbuild gen/science/cli.js --bundle --platform=node --format=cjs --outfile=dist/cli.cjs",
     "build:win": "npm run build:bundle && npx pkg dist/cli.cjs --targets node18-win-x64 --output dist/pokechess-science.exe",
-    "test:windows-smoke": "node gen/science/test-windows-smoke.js",
-    "win:doctor": "node gen/science/win-doctor.js"
+    "test:windows-smoke": "node gen/science/test-windows-smoke.js"
   },
   "dependencies": {
     "@colyseus/command": "^0.3.1",
