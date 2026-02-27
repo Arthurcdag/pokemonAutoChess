@@ -113,6 +113,22 @@ npm.cmd run win:doctor
 
 This checks scripts, required files, and Node/npm availability and prints actionable next steps.
 
+## Merge conflict fast-path (generated science data)
+
+If a merge/rebase produces many conflicts in precomputed files under
+`app/models/precomputed/scientific-method/`, run:
+
+```bash
+npm run resolve-science-conflicts
+```
+
+What it does:
+
+- keeps local (`--ours`) versions of key source files when conflicted (`gen/extract-scientific-dataset.js`, validator/docs/package metadata),
+- regenerates all scientific-method artifacts from source extractor,
+- validates data integrity,
+- stages regenerated datasets so you can finish merge/rebase quickly.
+
 ## Smoke test
 
 ```bash
