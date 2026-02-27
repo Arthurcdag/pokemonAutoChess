@@ -116,143 +116,6 @@ function inferPayloadFromText(text) {
   }
 }
 
-
-function toPayload(text) {
-  const raw = extractNumbers(text)
-  const payload = {
-    raw_numbers: raw,
-    inferred_from_text: true,
-    damage: raw[0] ?? null,
-    heal: raw[1] ?? null,
-    shield: raw[2] ?? null,
-    duration_s: raw.find((n) => n > 0 && n <= 20) ?? null,
-    status: /BURN|POISON|SLEEP|FREEZE|CONFUSION|CHARM|PARALYSIS|WOUND|SILENCE/.test(text || '')
-  }
-  return payload
-}
-
-function effectId(sourceType, id) {
-  return `${sourceType.toUpperCase()}__${id}`
-}
-
-function inferItemRarity(itemId, t) {
-  const inList = (k) => Array.isArray(t[k]) && t[k].includes(itemId)
-  if (inList('special_items') || inList('town_items') || inList('shiny_items')) return 'legendary'
-  if (itemId.endsWith('_MASK') || itemId.endsWith('_MEMORY') || itemId.startsWith('TM_')) return 'epic'
-  if (itemId.includes('BERRY') || itemId.includes('GEM')) return 'common'
-  if (itemId.endsWith('_STONE') || itemId.endsWith('_ORB')) return 'rare'
-  return 'rare'
-}
-
-function buildItemRegistry(t) {
-  return Object.entries(t.item || {}).map(([itemId, itemName]) => ({
-    item_id: itemId,
-    name_en: itemName,
-    rarity: inferItemRarity(itemId, t),
-    effects: [{ effect_id: effectId('item', itemId) }],
-    constraints: {
-      unique_per_team: ['legendary', 'unique'].includes(inferItemRarity(itemId, t)),
-      unique_per_unit: true,
-      slot_limit: 3
-    },
-    text_en: t.item_description?.[itemId] || 'No description found'
-  }))
-}
-
-function buildEffectsTextDataset(t, synergyDataset, records) {
-  const abilityToPokemon = {}
-  records.forEach((r) => {
-    if (!abilityToPokemon[r.ability_id]) abilityToPokemon[r.ability_id] = r.pokemon_id
-  })
-
-  const abilityEffects = Object.entries(t.ability || {}).map(([abilityId, abilityName]) => ({
-    effect_id: effectId('ability', abilityId),
-    pokemon_id: abilityToPokemon[abilityId] || null,
-    name_en: abilityName,
-    text_en: t.ability_description?.[abilityId] || 'No description found',
-    extracted_numbers: extractNumbers(t.ability_description?.[abilityId] || ''),
-    trigger: 'onCast',
-    targeting: 'contextual'
-  }))
-
-  const itemEffects = Object.entries(t.item || {}).map(([itemId, itemName]) => ({
-    effect_id: effectId('item', itemId),
-    item_id: itemId,
-    name_en: itemName,
-    text_en: t.item_description?.[itemId] || 'No description found',
-    extracted_numbers: extractNumbers(t.item_description?.[itemId] || ''),
-    trigger: 'passive_or_on_equip',
-    targeting: 'self_or_contextual'
-  }))
-
-  const synergyEffects = synergyDataset.map((synergy) => ({
-    synergy_id: synergy.synergy_id,
-    thresholds: synergy.thresholds,
-    bonus_text_en: synergy.bonuses.map((bonus) => bonus.notes || 'No description found'),
-    extracted_numbers: synergy.bonuses.map((bonus) => extractNumbers(bonus.notes || '')),
-    effect_ids: synergy.bonuses.map((bonus) => bonus.effect_id)
-  }))
-
-  return {
-    extracted_at: new Date().toISOString(),
-    counts: {
-      ability_effects: abilityEffects.length,
-      item_effects: itemEffects.length,
-      synergies: synergyEffects.length,
-      synergy_bonus_effects: synergyEffects.reduce((n, s) => n + s.effect_ids.length, 0)
-    },
-    ability_effects: abilityEffects,
-    item_effects: itemEffects,
-    synergy_effects: synergyEffects
-  }
-}
-
-function buildItemDropTable() {
-  const rounds = []
-  for (let round = 1; round <= 40; round++) {
-    const eventType = round % 5 === 0 ? 'carousel' : round % 3 === 0 ? 'drop' : 'none'
-    if (eventType === 'none') continue
-    rounds.push({
-      round,
-      event_type: eventType,
-      pick_order_rule: 'reverse_placement_then_seeded_tiebreak',
-      rarity_distribution: eventType === 'carousel' ? { common: 0.45, rare: 0.35, epic: 0.15, unique: 0.05 } : { common: 0.7, rare: 0.22, epic: 0.07, unique: 0.01 },
-      offered_slots: eventType === 'carousel' ? 8 : 1
-    })
-  }
-  return { rounds }
-}
-
-function buildFusionRules(records) {
-  const families = {}
-  records.forEach((r) => {
-    if (!families[r.family_id]) families[r.family_id] = []
-    families[r.family_id].push(r.pokemon_id)
-  })
-  return {
-    copies_to_upgrade: 3,
-    max_star_level: 3,
-    evolution_chains: Object.entries(families).map(([family_id, chain]) => ({ family_id, chain })),
-    special_fusion_rules: [],
-    constraints: {
-      bench_size: 9,
-      board_size_by_level: 'equals_player_level',
-      fusion_checks_on: ['buy', 'round_end']
-    }
-  }
-}
-
-function buildEconomyRules(shopPool) {
-  return {
-    base_income_by_round: { early_rounds_1_2: 4, default: 5 },
-    interest: { per_10_gold: 1, cap: 5 },
-    streak: { min_streak_for_bonus: 2, cap: 3 },
-    roll_cost: 2,
-    level_cost_per_4_xp: 4,
-    shop_odds_by_level: shopPool.shop_odds_by_level,
-    hard_caps: { max_buys_per_round: 5, bench_size: 9, board_size: 'player_level' }
-  }
-}
 function extractScientificDataset() {
   const csvRows = parseCsv(fs.readFileSync(resolveDataFile('pokemons-data.csv', CSV_PATH), 'utf8'))
   const t = JSON.parse(fs.readFileSync(resolveDataFile('translation.en.json', TRANSLATION_PATH), 'utf8'))
@@ -347,73 +210,45 @@ function extractScientificDataset() {
     key: synergyId,
     name_en: t.synergy?.[synergyId] || synergyId,
     thresholds: synergyTriggers[synergyId] || [],
-    bonuses: (synergyEffects[synergyId] || []).map((rawEffectId) => ({
-      effect_id: effectId('synergy', rawEffectId),
+    bonuses: (synergyEffects[synergyId] || []).map((effectId) => ({
+      effect_id: effectId,
       source_type: 'synergy',
       trigger: 'passive',
       targeting: 'contextual',
-      payload: toPayload(t.effect_description?.[rawEffectId] || ''),
+      payload: inferPayloadFromText(t.effect_description?.[effectId] || ''),
       cooldown: null,
       mana_cost: null,
       internal_icd: null,
-      notes: t.effect_description?.[rawEffectId] || 'No description found'
+      notes: t.effect_description?.[effectId] || 'No description found'
     })),
     description_en: t.synergy_description?.[synergyId] || 'No description found'
   }))
 
   const effectRegistry = [
     ...Object.entries(t.ability || {}).map(([abilityId, abilityName]) => ({
-      effect_id: effectId('ability', abilityId),
-      source_type: 'ability',
+      effect_id: abilityId,
+      source_type: 'pokemon_ability',
       trigger: 'onCast',
       targeting: 'contextual',
-      payload: toPayload(t.ability_description?.[abilityId] || ''),
-      formalization_gap: !extractNumbers(t.ability_description?.[abilityId] || '').length,
+      payload: inferPayloadFromText(t.ability_description?.[abilityId] || ''),
       cooldown: null,
       mana_cost: null,
       internal_icd: null,
       name_en: abilityName,
-      text_en: t.ability_description?.[abilityId] || 'No description found'
+      notes: t.ability_description?.[abilityId] || 'No description found'
     })),
-    ...Object.entries(t.item || {}).map(([itemId, itemName]) => ({
-      effect_id: effectId('item', itemId),
-      source_type: 'item',
-      trigger: 'onEquip',
-      targeting: 'self_or_contextual',
-      payload: toPayload(t.item_description?.[itemId] || ''),
-      formalization_gap: !extractNumbers(t.item_description?.[itemId] || '').length,
-      cooldown: null,
-      mana_cost: null,
-      internal_icd: null,
-      name_en: itemName,
-      text_en: t.item_description?.[itemId] || 'No description found'
-    })),
-    ...Object.entries(t.effect || {}).map(([rawEffectId, effectName]) => ({
-      effect_id: effectId('status', rawEffectId),
-      source_type: 'status',
+    ...Object.entries(t.effect || {}).map(([effectId, effectName]) => ({
+      effect_id: effectId,
+      source_type: 'status_or_synergy_effect',
       trigger: 'passive',
       targeting: 'contextual',
-      payload: toPayload(t.effect_description?.[rawEffectId] || ''),
-      formalization_gap: !extractNumbers(t.effect_description?.[rawEffectId] || '').length,
+      payload: inferPayloadFromText(t.effect_description?.[effectId] || ''),
       cooldown: null,
       mana_cost: null,
       internal_icd: null,
       name_en: effectName,
-      text_en: t.effect_description?.[rawEffectId] || 'No description found'
-    })),
-    ...synergyDataset.flatMap((s) => s.bonuses.map((b) => ({
-      effect_id: b.effect_id,
-      source_type: 'synergy',
-      trigger: b.trigger,
-      targeting: b.targeting,
-      payload: b.payload,
-      formalization_gap: !Array.isArray(b.payload?.raw_numbers) || b.payload.raw_numbers.length === 0,
-      cooldown: b.cooldown,
-      mana_cost: b.mana_cost,
-      internal_icd: b.internal_icd,
-      name_en: b.effect_id,
-      text_en: b.notes
-    })))
+      notes: t.effect_description?.[effectId] || 'No description found'
+    }))
   ]
 
   const shopPool = {
@@ -441,13 +276,6 @@ function extractScientificDataset() {
     typePairsTop40: Object.entries(frequency.type_pairs).sort((a, b) => b[1] - a[1]).slice(0, 40)
   }
 
-  const effectsTextDataset = buildEffectsTextDataset(t, synergyDataset, records)
-
-  const itemRegistry = buildItemRegistry(t)
-  const itemDropTable = buildItemDropTable()
-  const fusionRules = buildFusionRules(records)
-  const economyRules = buildEconomyRules(shopPool)
-
   const experimentDesignTemplate = {
     objective: 'Run reproducible scientific experiments on Pokemon team combinations.',
     hypothesisTemplate:
@@ -465,15 +293,6 @@ function extractScientificDataset() {
     }
   }
 
-
-  const effectIdSet = new Set()
-  for (const e of effectRegistry) {
-    if (effectIdSet.has(e.effect_id)) {
-      throw new Error(`Duplicate effect_id detected during extraction: ${e.effect_id}`)
-    }
-    effectIdSet.add(e.effect_id)
-  }
-
   fs.mkdirSync(OUTPUT_DIR, { recursive: true })
   fs.writeFileSync(path.join(OUTPUT_DIR, 'pokemon-scientific-dataset.json'), JSON.stringify(records, null, 2))
   fs.writeFileSync(path.join(OUTPUT_DIR, 'frequency-summary.json'), JSON.stringify(frequencySummary, null, 2))
@@ -482,11 +301,6 @@ function extractScientificDataset() {
   fs.writeFileSync(path.join(OUTPUT_DIR, 'effect-registry.json'), JSON.stringify(effectRegistry, null, 2))
   fs.writeFileSync(path.join(OUTPUT_DIR, 'synergy-dataset.json'), JSON.stringify(synergyDataset, null, 2))
   fs.writeFileSync(path.join(OUTPUT_DIR, 'shop-pool.json'), JSON.stringify(shopPool, null, 2))
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'item-registry.json'), JSON.stringify(itemRegistry, null, 2))
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'item-drop-table.json'), JSON.stringify(itemDropTable, null, 2))
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'fusion-rules.json'), JSON.stringify(fusionRules, null, 2))
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'economy-rules.json'), JSON.stringify(economyRules, null, 2))
-  fs.writeFileSync(path.join(OUTPUT_DIR, 'effects-text-dataset.json'), JSON.stringify(effectsTextDataset, null, 2))
 
   console.log(`Extracted ${records.length} pokemon records to ${OUTPUT_DIR}`)
 }

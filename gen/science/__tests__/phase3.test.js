@@ -40,7 +40,8 @@ test('policy experiments and meta report generate schema-valid outputs', () => {
     stdio: 'pipe'
   })
   execSync(`node gen/science/verify-mechanics.js --seed 42 --run-id ${RUN_ID}`, { stdio: 'pipe' })
-  execSync(`node gen/science/run-baselines.js --stage singles,pairs,items,item_carriers,synergy_thresholds --seed 42 --battles 10 --run-id ${RUN_ID}`, { stdio: 'pipe' })
+  execSync(`node gen/science/run-baselines.js --stage singles --seed 42 --battles 10 --run-id ${RUN_ID}`, { stdio: 'pipe' })
+  execSync(`node gen/science/run-baselines.js --stage pairs --seed 42 --battles 8 --run-id ${RUN_ID}`, { stdio: 'pipe' })
   execSync(`node gen/science/validate-result-schemas.js --run-id ${RUN_ID}`, {
     stdio: 'pipe'
   })

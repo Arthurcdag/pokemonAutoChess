@@ -39,7 +39,7 @@ function run() {
   const args = parseArgs(process.argv.slice(2))
   const claimsPath = args.claims
     ? path.resolve(process.cwd(), args.claims)
-    : path.join(DATA_DIR, 'policy-claims.jsonl')
+    : path.join(DATA_DIR, 'claims.jsonl')
   const lobbiesPerCondition = Number(args['lobbies-per-condition'] || 300)
   const seed = Number(args.seed || 42)
   const runId = args['run-id'] || 'latest'

@@ -62,12 +62,6 @@ Goal criteria are read from `goals.json` next to the executable (or repo root fa
 npm run win:dist
 ```
 
-If you get Windows setup/script errors, run:
-
-```bash
-npm.cmd run win:doctor
-```
-
 Creates `dist/PokeChessScience/` with:
 
 - `pokechess-science.cmd`
@@ -91,44 +85,6 @@ npm run build:win
 
 Builds with `esbuild + pkg` targeting `node18-win-x64`.
 
-
-## Windows troubleshooting
-
-Common causes and fixes:
-
-- `Missing script: "win:dist"`
-  - You are likely in an outdated/wrong folder copy.
-  - Run `npm run` and check that `win:dist` exists.
-- `Cannot find module ... gen\science\build-windows-dist.js`
-  - Your copy is missing new science scripts. Update to latest repository version.
-- PowerShell blocks `npm.ps1`
-  - Use `npm.cmd` (recommended): `npm.cmd run win:dist`
-  - Or bypass for current shell only: `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
-
-Quick diagnostic:
-
-```bash
-npm.cmd run win:doctor
-```
-
-This checks scripts, required files, and Node/npm availability and prints actionable next steps.
-
-## Merge conflict fast-path (generated science data)
-
-If a merge/rebase produces many conflicts in precomputed files under
-`app/models/precomputed/scientific-method/`, run:
-
-```bash
-npm run resolve-science-conflicts
-```
-
-What it does:
-
-- keeps local (`--ours`) versions of key source files when conflicted (`gen/extract-scientific-dataset.js`, validator/docs/package metadata),
-- regenerates all scientific-method artifacts from source extractor,
-- validates data integrity,
-- stages regenerated datasets so you can finish merge/rebase quickly.
-
 ## Smoke test
 
 ```bash
@@ -136,17 +92,6 @@ npm run test:windows-smoke
 ```
 
 Runs the CLI in a temporary `POKECHESS_HOME` and asserts `results/latest/STATUS.txt` exists.
-
-
-## Validation report semantics (WRONG Ledger)
-
-`validate-science-data` now emits `validation-report.json` with a paraconsistent “wrong-ledger” section:
-
-- every proposition is denied-by-default,
-- evidence can still add support,
-- outputs are classified as `actionable`, `contested`, `denied`, or `unknown`.
-
-This keeps contradictions from collapsing the pipeline and makes validation outcomes question-driven.
 
 ## Result schema checks
 
@@ -162,14 +107,9 @@ Static datasets (`app/models/precomputed/scientific-method/`):
 - `effect-registry.json`
 - `synergy-dataset.json`
 - `shop-pool.json`
-- `item-registry.json`
-- `item-drop-table.json`
-- `fusion-rules.json`
-- `economy-rules.json`
 - `frequency-summary.json`
 - `experiment-design-template.json`
 - `mechanics-glossary.json`
-- `effects-text-dataset.json` (all synergy/item/ability texts + extracted numbers)
 - `claims.jsonl`
 - `policy-claims.jsonl`
 
