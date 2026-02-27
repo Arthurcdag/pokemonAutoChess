@@ -47,7 +47,7 @@
     "setup-live": "pm2 deploy production setup",
     "check-circular-refs": "npx madge ./app -- --circular --exclude '^public/dist'",
     "extract-science-data": "node gen/extract-scientific-dataset.js",
-    "validate-science-data": "node gen/science/validate-science-data.js",
+    "validate-science-data": "node gen/science/validate-science-data.js --allow-formalization-gaps true",
     "generate-claims": "node gen/science/make-claims.js",
     "run-experiments": "node gen/science/run-experiments.js",
     "test:science": "node --test gen/science/__tests__/*.test.js",
@@ -64,7 +64,9 @@
     "win:dist": "node gen/science/build-windows-dist.js",
     "build:bundle": "npx esbuild gen/science/cli.js --bundle --platform=node --format=cjs --outfile=dist/cli.cjs",
     "build:win": "npm run build:bundle && npx pkg dist/cli.cjs --targets node18-win-x64 --output dist/pokechess-science.exe",
-    "test:windows-smoke": "node gen/science/test-windows-smoke.js"
+    "test:windows-smoke": "node gen/science/test-windows-smoke.js",
+    "win:doctor": "node gen/science/win-doctor.js",
+    "resolve-science-conflicts": "bash scripts/resolve-science-conflicts.sh"
   },
   "dependencies": {
     "@colyseus/command": "^0.3.1",

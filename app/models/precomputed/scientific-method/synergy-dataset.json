@@ -11,7 +11,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "STAMINA",
+        "effect_id": "SYNERGY__STAMINA",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -19,7 +19,12 @@
           "raw_numbers": [
             15
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 15,
+          "heal": null,
+          "shield": null,
+          "duration_s": 15,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -27,7 +32,7 @@
         "notes": "Gain 15 SHIELD. Get a SILK_SCARF."
       },
       {
-        "effect_id": "STRENGTH",
+        "effect_id": "SYNERGY__STRENGTH",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -35,7 +40,12 @@
           "raw_numbers": [
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 20,
+          "heal": null,
+          "shield": null,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -43,7 +53,7 @@
         "notes": "Gain 20 SHIELD. Get a second SILK_SCARF."
       },
       {
-        "effect_id": "ENDURE",
+        "effect_id": "SYNERGY__ENDURE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -51,7 +61,12 @@
           "raw_numbers": [
             25
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 25,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -59,7 +74,7 @@
         "notes": "Gain 25 SHIELD. Get a third SILK_SCARF."
       },
       {
-        "effect_id": "PURE_POWER",
+        "effect_id": "SYNERGY__PURE_POWER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -69,7 +84,12 @@
             30,
             30
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 30,
+          "shield": 30,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -91,7 +111,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "INGRAIN",
+        "effect_id": "SYNERGY__INGRAIN",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -100,7 +120,12 @@
             5,
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": 2,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -108,7 +133,7 @@
         "notes": "Restore 5 HP every 2 seconds. Get a berry tree."
       },
       {
-        "effect_id": "GROWTH",
+        "effect_id": "SYNERGY__GROWTH",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -117,7 +142,12 @@
             15,
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 15,
+          "heal": 2,
+          "shield": null,
+          "duration_s": 15,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -125,7 +155,7 @@
         "notes": "Restore 15 HP every 2 seconds. Get another berry tree."
       },
       {
-        "effect_id": "SPORE",
+        "effect_id": "SYNERGY__SPORE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -134,7 +164,12 @@
             25,
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 25,
+          "heal": 2,
+          "shield": null,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -142,7 +177,7 @@
         "notes": "Restore 25 HP every 2 seconds. Get a third berry tree."
       },
       {
-        "effect_id": "OVERGROW",
+        "effect_id": "SYNERGY__OVERGROW",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -151,7 +186,12 @@
             30,
             50
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 50,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -173,7 +213,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "FLAME_BODY",
+        "effect_id": "SYNERGY__FLAME_BODY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -182,7 +222,12 @@
             30,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 3,
+          "shield": null,
+          "duration_s": 3,
+          "status": true
         },
         "cooldown": null,
         "mana_cost": null,
@@ -190,7 +235,7 @@
         "notes": "Attacks have [30,LK]% chance to inflict BURN for 3 seconds"
       },
       {
-        "effect_id": "WILDFIRE",
+        "effect_id": "SYNERGY__WILDFIRE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -198,7 +243,12 @@
           "raw_numbers": [
             1
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": null,
+          "shield": null,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -206,7 +256,7 @@
         "notes": "+1 ATK after every hit"
       },
       {
-        "effect_id": "BLAZE",
+        "effect_id": "SYNERGY__BLAZE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -214,7 +264,12 @@
           "raw_numbers": [
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 2,
+          "heal": null,
+          "shield": null,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -222,7 +277,7 @@
         "notes": "+2 ATK after every hit"
       },
       {
-        "effect_id": "DESOLATE_LAND",
+        "effect_id": "SYNERGY__DESOLATE_LAND",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -231,7 +286,12 @@
             3,
             1
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 3,
+          "heal": 1,
+          "shield": null,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -252,7 +312,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "RAIN_DANCE",
+        "effect_id": "SYNERGY__RAIN_DANCE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -260,7 +320,12 @@
           "raw_numbers": [
             4
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 4,
+          "heal": null,
+          "shield": null,
+          "duration_s": 4,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -268,7 +333,7 @@
         "notes": "+4 PP per second. Get an Old Rod."
       },
       {
-        "effect_id": "DRIZZLE",
+        "effect_id": "SYNERGY__DRIZZLE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -276,7 +341,12 @@
           "raw_numbers": [
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 8,
+          "heal": null,
+          "shield": null,
+          "duration_s": 8,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -284,7 +354,7 @@
         "notes": "+8 PP per second. Get a Good Rod."
       },
       {
-        "effect_id": "PRIMORDIAL_SEA",
+        "effect_id": "SYNERGY__PRIMORDIAL_SEA",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -292,7 +362,12 @@
           "raw_numbers": [
             12
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 12,
+          "heal": null,
+          "shield": null,
+          "duration_s": 12,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -313,13 +388,18 @@
     ],
     "bonuses": [
       {
-        "effect_id": "RISING_VOLTAGE",
+        "effect_id": "SYNERGY__RISING_VOLTAGE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -327,13 +407,18 @@
         "notes": "Every fourth attack is a triple attack"
       },
       {
-        "effect_id": "POWER_SURGE",
+        "effect_id": "SYNERGY__POWER_SURGE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -341,7 +426,7 @@
         "notes": "Every third attack is a triple attack"
       },
       {
-        "effect_id": "SUPERCHARGED",
+        "effect_id": "SYNERGY__SUPERCHARGED",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -350,7 +435,12 @@
             10,
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 10,
+          "heal": 5,
+          "shield": null,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -372,7 +462,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "GUTS",
+        "effect_id": "SYNERGY__GUTS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -380,7 +470,12 @@
           "raw_numbers": [
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 3,
+          "heal": null,
+          "shield": null,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -388,7 +483,7 @@
         "notes": "Blocks 3 damage"
       },
       {
-        "effect_id": "STURDY",
+        "effect_id": "SYNERGY__STURDY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -396,7 +491,12 @@
           "raw_numbers": [
             6
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 6,
+          "heal": null,
+          "shield": null,
+          "duration_s": 6,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -404,7 +504,7 @@
         "notes": "Blocks 6 damage"
       },
       {
-        "effect_id": "DEFIANT",
+        "effect_id": "SYNERGY__DEFIANT",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -412,7 +512,12 @@
           "raw_numbers": [
             9
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 9,
+          "heal": null,
+          "shield": null,
+          "duration_s": 9,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -420,7 +525,7 @@
         "notes": "Blocks 9 damage"
       },
       {
-        "effect_id": "JUSTIFIED",
+        "effect_id": "SYNERGY__JUSTIFIED",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -429,7 +534,12 @@
             12,
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 12,
+          "heal": 8,
+          "shield": null,
+          "duration_s": 12,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -450,7 +560,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "AMNESIA",
+        "effect_id": "SYNERGY__AMNESIA",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -459,7 +569,12 @@
             50,
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": 5,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -467,7 +582,7 @@
         "notes": "+50 AP. A Unown has 5% chance to appear in every shop."
       },
       {
-        "effect_id": "LIGHT_SCREEN",
+        "effect_id": "SYNERGY__LIGHT_SCREEN",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -476,7 +591,12 @@
             100,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 100,
+          "heal": 3,
+          "shield": null,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -484,7 +604,7 @@
         "notes": "+100 AP. A Unown appears every 3 shops."
       },
       {
-        "effect_id": "EERIE_SPELL",
+        "effect_id": "SYNERGY__EERIE_SPELL",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -493,7 +613,12 @@
             150,
             10
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 150,
+          "heal": 10,
+          "shield": null,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -514,7 +639,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "HONE_CLAWS",
+        "effect_id": "SYNERGY__HONE_CLAWS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -523,7 +648,12 @@
             30,
             30
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 30,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -531,7 +661,7 @@
         "notes": "Gain +30% CRIT_CHANCE and +30% CRIT_POWER"
       },
       {
-        "effect_id": "ASSURANCE",
+        "effect_id": "SYNERGY__ASSURANCE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -540,7 +670,12 @@
             40,
             50
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 40,
+          "heal": 50,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -548,7 +683,7 @@
         "notes": "Gain +40% CRIT_CHANCE and +50% CRIT_POWER"
       },
       {
-        "effect_id": "BEAT_UP",
+        "effect_id": "SYNERGY__BEAT_UP",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -557,7 +692,12 @@
             50,
             80
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": 80,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -579,7 +719,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "STEEL_SURGE",
+        "effect_id": "SYNERGY__STEEL_SURGE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -587,7 +727,12 @@
           "raw_numbers": [
             33
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 33,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -595,7 +740,7 @@
         "notes": "Deal 33% of ATK as TRUE"
       },
       {
-        "effect_id": "STEEL_SPIKE",
+        "effect_id": "SYNERGY__STEEL_SPIKE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -603,7 +748,12 @@
           "raw_numbers": [
             66
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 66,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -611,7 +761,7 @@
         "notes": "Deal 66% of ATK as TRUE"
       },
       {
-        "effect_id": "CORKSCREW_CRASH",
+        "effect_id": "SYNERGY__CORKSCREW_CRASH",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -619,7 +769,12 @@
           "raw_numbers": [
             100
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 100,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -627,7 +782,7 @@
         "notes": "Deal 100% of ATK as TRUE"
       },
       {
-        "effect_id": "MAX_MELTDOWN",
+        "effect_id": "SYNERGY__MAX_MELTDOWN",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -635,7 +790,12 @@
           "raw_numbers": [
             120
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 120,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -657,7 +817,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "TILLER",
+        "effect_id": "SYNERGY__TILLER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -667,7 +827,12 @@
             5,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": 5,
+          "shield": 3,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -675,7 +840,7 @@
         "notes": "Gain from +1 to +5 DEF and SPE_DEF and +3 ATK at max depth"
       },
       {
-        "effect_id": "DIGGER",
+        "effect_id": "SYNERGY__DIGGER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -685,7 +850,12 @@
             10,
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 2,
+          "heal": 10,
+          "shield": 5,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -693,7 +863,7 @@
         "notes": "Gain from +2 to +10 DEF and SPE_DEF and +5 ATK at max depth"
       },
       {
-        "effect_id": "DRILLER",
+        "effect_id": "SYNERGY__DRILLER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -703,7 +873,12 @@
             15,
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 3,
+          "heal": 15,
+          "shield": 8,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -711,7 +886,7 @@
         "notes": "Gain from +3 to +15 DEF and SPE_DEF and +8 ATK at max depth"
       },
       {
-        "effect_id": "DEEP_MINER",
+        "effect_id": "SYNERGY__DEEP_MINER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -720,7 +895,12 @@
             5,
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": 8,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -741,7 +921,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "POISONOUS",
+        "effect_id": "SYNERGY__POISONOUS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -749,7 +929,12 @@
           "raw_numbers": [
             30
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": true
         },
         "cooldown": null,
         "mana_cost": null,
@@ -757,7 +942,7 @@
         "notes": "[30,LK]% chance to POISONNED"
       },
       {
-        "effect_id": "VENOMOUS",
+        "effect_id": "SYNERGY__VENOMOUS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -766,7 +951,12 @@
             60,
             1
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 60,
+          "heal": 1,
+          "shield": null,
+          "duration_s": 1,
+          "status": true
         },
         "cooldown": null,
         "mana_cost": null,
@@ -774,7 +964,7 @@
         "notes": "[60,LK]% chance to POISONNED. Max stacks of POISONNED +1"
       },
       {
-        "effect_id": "TOXIC",
+        "effect_id": "SYNERGY__TOXIC",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -783,7 +973,12 @@
             100,
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 100,
+          "heal": 2,
+          "shield": null,
+          "duration_s": 2,
+          "status": true
         },
         "cooldown": null,
         "mana_cost": null,
@@ -804,13 +999,18 @@
     ],
     "bonuses": [
       {
-        "effect_id": "DRAGON_ENERGY",
+        "effect_id": "SYNERGY__DRAGON_ENERGY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -818,7 +1018,7 @@
         "notes": "Dragon's second synergy counts double (not the third)"
       },
       {
-        "effect_id": "DRAGON_SCALES",
+        "effect_id": "SYNERGY__DRAGON_SCALES",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -826,7 +1026,12 @@
           "raw_numbers": [
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": null,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -834,7 +1039,7 @@
         "notes": "Dragons gain 5 SHIELD for each STAR of all your DRAGON units on board"
       },
       {
-        "effect_id": "DRAGON_DANCE",
+        "effect_id": "SYNERGY__DRAGON_DANCE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -843,7 +1048,12 @@
             1,
             1
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": 1,
+          "shield": null,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -864,7 +1074,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "BULK_UP",
+        "effect_id": "SYNERGY__BULK_UP",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -873,7 +1083,12 @@
             30,
             15
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 15,
+          "shield": null,
+          "duration_s": 15,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -881,7 +1096,7 @@
         "notes": "Heal 30 HP and gain 15 SPEED"
       },
       {
-        "effect_id": "RAGE",
+        "effect_id": "SYNERGY__RAGE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -890,7 +1105,12 @@
             40,
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 40,
+          "heal": 20,
+          "shield": null,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -898,7 +1118,7 @@
         "notes": "Heal 40 HP and gain 20 SPEED"
       },
       {
-        "effect_id": "ANGER_POINT",
+        "effect_id": "SYNERGY__ANGER_POINT",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -907,7 +1127,12 @@
             50,
             25
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": 25,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -929,7 +1154,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "PURSUIT",
+        "effect_id": "SYNERGY__PURSUIT",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -940,7 +1165,12 @@
             10,
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 3,
+          "shield": 10,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -948,7 +1178,7 @@
         "notes": "[30,LK]% chance to FLINCH. When knocking out a target, gain 3 ATK, 10 AP and 20% of its max HP."
       },
       {
-        "effect_id": "BRUTAL_SWING",
+        "effect_id": "SYNERGY__BRUTAL_SWING",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -958,7 +1188,12 @@
             20,
             40
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 6,
+          "heal": 20,
+          "shield": 40,
+          "duration_s": 6,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -966,7 +1201,7 @@
         "notes": "When knocking out a target, gain 6 ATK, 20 AP and 40% of its max HP"
       },
       {
-        "effect_id": "POWER_TRIP",
+        "effect_id": "SYNERGY__POWER_TRIP",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -976,7 +1211,12 @@
             30,
             60
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 10,
+          "heal": 30,
+          "shield": 60,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -984,7 +1224,7 @@
         "notes": "When knocking out a target, gain 10 ATK, 30 AP and 60% of its max HP"
       },
       {
-        "effect_id": "MERCILESS",
+        "effect_id": "SYNERGY__MERCILESS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -992,7 +1232,12 @@
           "raw_numbers": [
             10
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 10,
+          "heal": null,
+          "shield": null,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1013,7 +1258,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "MEDITATE",
+        "effect_id": "SYNERGY__MEDITATE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1021,7 +1266,12 @@
           "raw_numbers": [
             25
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 25,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1029,7 +1279,7 @@
         "notes": "Heal for 25% HP of the damage. Get a random bronze TM."
       },
       {
-        "effect_id": "FOCUS_ENERGY",
+        "effect_id": "SYNERGY__FOCUS_ENERGY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1037,7 +1287,12 @@
           "raw_numbers": [
             35
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 35,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1045,7 +1300,7 @@
         "notes": "Heal for 35% HP of the damage. Get a random silver TM."
       },
       {
-        "effect_id": "CALM_MIND",
+        "effect_id": "SYNERGY__CALM_MIND",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1053,7 +1308,12 @@
           "raw_numbers": [
             50
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1075,7 +1335,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "SWIFT_SWIM",
+        "effect_id": "SYNERGY__SWIFT_SWIM",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1085,7 +1345,12 @@
             10,
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": -30,
+          "heal": 10,
+          "shield": 5,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1093,7 +1358,7 @@
         "notes": "-30% negative status duration and damage. Wave heals 10% max HP and deal 5% max HP as TRUE."
       },
       {
-        "effect_id": "HYDRATION",
+        "effect_id": "SYNERGY__HYDRATION",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1103,7 +1368,12 @@
             20,
             10
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": -50,
+          "heal": 20,
+          "shield": 10,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1111,7 +1381,7 @@
         "notes": "-50% negative status duration and damage. Wave heals 20% max HP and deal 10% max HP as TRUE."
       },
       {
-        "effect_id": "WATER_VEIL",
+        "effect_id": "SYNERGY__WATER_VEIL",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1122,7 +1392,12 @@
             15,
             16
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": -70,
+          "heal": 30,
+          "shield": 15,
+          "duration_s": 15,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1130,7 +1405,7 @@
         "notes": "-70% negative status duration and damage. Wave heals 30% max HP and deal 15% max HP as TRUE. A second wave hits after 16 seconds."
       },
       {
-        "effect_id": "SURGE_SURFER",
+        "effect_id": "SYNERGY__SURGE_SURFER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1138,7 +1413,12 @@
           "raw_numbers": [
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 8,
+          "heal": null,
+          "shield": null,
+          "duration_s": 8,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1160,7 +1440,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "COCOON",
+        "effect_id": "SYNERGY__COCOON",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1168,7 +1448,12 @@
           "raw_numbers": [
             1
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": null,
+          "shield": null,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1176,7 +1461,7 @@
         "notes": "Copy 1 BUG Pokémon"
       },
       {
-        "effect_id": "INFESTATION",
+        "effect_id": "SYNERGY__INFESTATION",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1184,7 +1469,12 @@
           "raw_numbers": [
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 2,
+          "heal": null,
+          "shield": null,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1192,7 +1482,7 @@
         "notes": "Copy 2 BUG Pokémon"
       },
       {
-        "effect_id": "HORDE",
+        "effect_id": "SYNERGY__HORDE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1200,7 +1490,12 @@
           "raw_numbers": [
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 3,
+          "heal": null,
+          "shield": null,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1208,7 +1503,7 @@
         "notes": "Copy 3 BUG Pokémon"
       },
       {
-        "effect_id": "HEART_OF_THE_SWARM",
+        "effect_id": "SYNERGY__HEART_OF_THE_SWARM",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1216,7 +1511,12 @@
           "raw_numbers": [
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": null,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1238,7 +1538,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "TAILWIND",
+        "effect_id": "SYNERGY__TAILWIND",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1246,7 +1546,12 @@
           "raw_numbers": [
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 20,
+          "heal": null,
+          "shield": null,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1254,7 +1559,7 @@
         "notes": "Fly away once under 20% HP"
       },
       {
-        "effect_id": "FEATHER_DANCE",
+        "effect_id": "SYNERGY__FEATHER_DANCE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1262,7 +1567,12 @@
           "raw_numbers": [
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 2,
+          "heal": null,
+          "shield": null,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1270,7 +1580,7 @@
         "notes": "Get PROTECT for 2 seconds after flying away"
       },
       {
-        "effect_id": "MAX_AIRSTREAM",
+        "effect_id": "SYNERGY__MAX_AIRSTREAM",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1279,7 +1589,12 @@
             50,
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": 20,
+          "shield": null,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1287,7 +1602,7 @@
         "notes": "Fly away twice when under 50% HP and 20% HP"
       },
       {
-        "effect_id": "SKYDIVE",
+        "effect_id": "SYNERGY__SKYDIVE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1295,7 +1610,12 @@
           "raw_numbers": [
             150
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 150,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1317,13 +1637,18 @@
     ],
     "bonuses": [
       {
-        "effect_id": "COTTONWEED",
+        "effect_id": "SYNERGY__COTTONWEED",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1331,13 +1656,18 @@
         "notes": "Get an Hoppip Flower Pot"
       },
       {
-        "effect_id": "FLYCATCHER",
+        "effect_id": "SYNERGY__FLYCATCHER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1345,13 +1675,18 @@
         "notes": "Get a Bellsprout Flower Pot"
       },
       {
-        "effect_id": "FRAGRANT",
+        "effect_id": "SYNERGY__FRAGRANT",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1359,13 +1694,18 @@
         "notes": "Get a Chikorita Flower Pot"
       },
       {
-        "effect_id": "FLOWER_POWER",
+        "effect_id": "SYNERGY__FLOWER_POWER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1386,7 +1726,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "BATTLE_ARMOR",
+        "effect_id": "SYNERGY__BATTLE_ARMOR",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1395,7 +1735,12 @@
             10,
             -30
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 10,
+          "heal": -30,
+          "shield": null,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1403,7 +1748,7 @@
         "notes": "Gain 10 DEF, receive -30% critical damage. Collect one weather rock when the weather changes."
       },
       {
-        "effect_id": "MOUTAIN_RESISTANCE",
+        "effect_id": "SYNERGY__MOUTAIN_RESISTANCE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1413,7 +1758,12 @@
             -50,
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": -50,
+          "shield": 2,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1421,7 +1771,7 @@
         "notes": "Gain 30 DEF, receive -50% critical damage. Collect up to 2 weather rocks."
       },
       {
-        "effect_id": "DIAMOND_STORM",
+        "effect_id": "SYNERGY__DIAMOND_STORM",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1431,7 +1781,12 @@
             -70,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 60,
+          "heal": -70,
+          "shield": 3,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1453,7 +1808,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "CURSE_OF_VULNERABILITY",
+        "effect_id": "SYNERGY__CURSE_OF_VULNERABILITY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1461,7 +1816,12 @@
           "raw_numbers": [
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": null,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1469,7 +1829,7 @@
         "notes": "The enemy with the highest DEF + SPE_DEF lose 5 of it and is FLINCH"
       },
       {
-        "effect_id": "CURSE_OF_WEAKNESS",
+        "effect_id": "SYNERGY__CURSE_OF_WEAKNESS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1477,7 +1837,12 @@
           "raw_numbers": [
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 20,
+          "heal": null,
+          "shield": null,
+          "duration_s": 20,
+          "status": true
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1485,7 +1850,7 @@
         "notes": "Also, the enemy with the highest ATK lose 20% of it and is PARALYSIS"
       },
       {
-        "effect_id": "CURSE_OF_TORMENT",
+        "effect_id": "SYNERGY__CURSE_OF_TORMENT",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1493,7 +1858,12 @@
           "raw_numbers": [
             30
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1501,7 +1871,7 @@
         "notes": "Also, the enemy with the highest AP lose 30 of it and is FATIGUE"
       },
       {
-        "effect_id": "CURSE_OF_FATE",
+        "effect_id": "SYNERGY__CURSE_OF_FATE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1509,7 +1879,12 @@
           "raw_numbers": [
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 8,
+          "heal": null,
+          "shield": null,
+          "duration_s": 8,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1531,7 +1906,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "AROMATIC_MIST",
+        "effect_id": "SYNERGY__AROMATIC_MIST",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1539,7 +1914,12 @@
           "raw_numbers": [
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 20,
+          "heal": null,
+          "shield": null,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1547,7 +1927,7 @@
         "notes": "20% additional SPECIAL to attacks and shocks"
       },
       {
-        "effect_id": "FAIRY_WIND",
+        "effect_id": "SYNERGY__FAIRY_WIND",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1555,7 +1935,12 @@
           "raw_numbers": [
             40
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 40,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1563,7 +1948,7 @@
         "notes": "40% additional SPECIAL to attacks and shocks"
       },
       {
-        "effect_id": "STRANGE_STEAM",
+        "effect_id": "SYNERGY__STRANGE_STEAM",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1571,7 +1956,12 @@
           "raw_numbers": [
             60
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 60,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1579,7 +1969,7 @@
         "notes": "60% additional SPECIAL to attacks and shocks"
       },
       {
-        "effect_id": "MOON_FORCE",
+        "effect_id": "SYNERGY__MOON_FORCE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1587,7 +1977,12 @@
           "raw_numbers": [
             80
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 80,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1609,7 +2004,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "CHILLY",
+        "effect_id": "SYNERGY__CHILLY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1617,7 +2012,12 @@
           "raw_numbers": [
             4
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 4,
+          "heal": null,
+          "shield": null,
+          "duration_s": 4,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1625,7 +2025,7 @@
         "notes": "+4 SPE_DEF"
       },
       {
-        "effect_id": "FROSTY",
+        "effect_id": "SYNERGY__FROSTY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1633,7 +2033,12 @@
           "raw_numbers": [
             12
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 12,
+          "heal": null,
+          "shield": null,
+          "duration_s": 12,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1641,7 +2046,7 @@
         "notes": "+12 SPE_DEF"
       },
       {
-        "effect_id": "FREEZING",
+        "effect_id": "SYNERGY__FREEZING",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1649,7 +2054,12 @@
           "raw_numbers": [
             25
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 25,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1657,7 +2067,7 @@
         "notes": "+25 SPE_DEF"
       },
       {
-        "effect_id": "SHEER_COLD",
+        "effect_id": "SYNERGY__SHEER_COLD",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1666,7 +2076,12 @@
             50,
             30
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": 30,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1687,7 +2102,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "ANCIENT_POWER",
+        "effect_id": "SYNERGY__ANCIENT_POWER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1696,7 +2111,12 @@
             40,
             40
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 40,
+          "heal": 40,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1704,7 +2124,7 @@
         "notes": "Gain 40% base max HP as SHIELD and +40% base ATK"
       },
       {
-        "effect_id": "ELDER_POWER",
+        "effect_id": "SYNERGY__ELDER_POWER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1713,7 +2133,12 @@
             70,
             70
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 70,
+          "heal": 70,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1721,7 +2146,7 @@
         "notes": "Gain 70% base max HP as SHIELD and +70% base ATK"
       },
       {
-        "effect_id": "FORGOTTEN_POWER",
+        "effect_id": "SYNERGY__FORGOTTEN_POWER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1730,7 +2155,12 @@
             100,
             100
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 100,
+          "heal": 100,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1751,7 +2181,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "LARGO",
+        "effect_id": "SYNERGY__LARGO",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1759,7 +2189,12 @@
           "raw_numbers": [
             2
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 2,
+          "heal": null,
+          "shield": null,
+          "duration_s": 2,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1767,7 +2202,7 @@
         "notes": "Ally team gains +2 ATK"
       },
       {
-        "effect_id": "ALLEGRO",
+        "effect_id": "SYNERGY__ALLEGRO",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1776,7 +2211,12 @@
             1,
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": 5,
+          "shield": null,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1784,7 +2224,7 @@
         "notes": "Ally team gains +1 ATK and +5 SPEED"
       },
       {
-        "effect_id": "PRESTO",
+        "effect_id": "SYNERGY__PRESTO",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1794,7 +2234,12 @@
             5,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": 5,
+          "shield": 3,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1815,13 +2260,18 @@
     ],
     "bonuses": [
       {
-        "effect_id": "DUBIOUS_DISC",
+        "effect_id": "SYNERGY__DUBIOUS_DISC",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
         "payload": {
           "raw_numbers": [],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": null,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1829,7 +2279,7 @@
         "notes": "Get a tool. It is removed when losing the synergy."
       },
       {
-        "effect_id": "LINK_CABLE",
+        "effect_id": "SYNERGY__LINK_CABLE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1837,7 +2287,12 @@
           "raw_numbers": [
             5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": null,
+          "shield": null,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1845,7 +2300,7 @@
         "notes": "Gain +5% base ATK, AP and max HP as SHIELD per held item. Get another tool."
       },
       {
-        "effect_id": "GOOGLE_SPECS",
+        "effect_id": "SYNERGY__GOOGLE_SPECS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1853,7 +2308,12 @@
           "raw_numbers": [
             10
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 10,
+          "heal": null,
+          "shield": null,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1874,7 +2334,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "HATCHER",
+        "effect_id": "SYNERGY__HATCHER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1882,7 +2342,12 @@
           "raw_numbers": [
             10
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 10,
+          "heal": null,
+          "shield": null,
+          "duration_s": 10,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1890,7 +2355,7 @@
         "notes": "Each BABY has a [10,LK]% chance to find an EGG_FOR_SELL."
       },
       {
-        "effect_id": "BREEDER",
+        "effect_id": "SYNERGY__BREEDER",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1898,7 +2363,12 @@
           "raw_numbers": [
             1
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": null,
+          "shield": null,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1906,7 +2376,7 @@
         "notes": "Get at least one EGG_FOR_SELL after each defeat against a player. Eggs hatch 1 stage earlier."
       },
       {
-        "effect_id": "GOLDEN_EGGS",
+        "effect_id": "SYNERGY__GOLDEN_EGGS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1916,7 +2386,12 @@
             1,
             10
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 5,
+          "heal": 1,
+          "shield": 10,
+          "duration_s": 5,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1938,7 +2413,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "SHINING_RAY",
+        "effect_id": "SYNERGY__SHINING_RAY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1947,7 +2422,12 @@
             20,
             20
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 20,
+          "heal": 20,
+          "shield": null,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1955,7 +2435,7 @@
         "notes": "Increase AP by 20 and ATK by 20%"
       },
       {
-        "effect_id": "LIGHT_PULSE",
+        "effect_id": "SYNERGY__LIGHT_PULSE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1963,7 +2443,12 @@
           "raw_numbers": [
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 8,
+          "heal": null,
+          "shield": null,
+          "duration_s": 8,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1971,7 +2456,7 @@
         "notes": "Also give +8 PP per second"
       },
       {
-        "effect_id": "ETERNAL_LIGHT",
+        "effect_id": "SYNERGY__ETERNAL_LIGHT",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1980,7 +2465,12 @@
             50,
             8
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 50,
+          "heal": 8,
+          "shield": null,
+          "duration_s": 8,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -1988,7 +2478,7 @@
         "notes": "Also increase DEF and SPE_DEF by 50% and give RUNE_PROTECT for 8 seconds"
       },
       {
-        "effect_id": "MAX_ILLUMINATION",
+        "effect_id": "SYNERGY__MAX_ILLUMINATION",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -1996,7 +2486,12 @@
           "raw_numbers": [
             100
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 100,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2018,7 +2513,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "QUICK_FEET",
+        "effect_id": "SYNERGY__QUICK_FEET",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2028,7 +2523,12 @@
             8,
             0.5
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 20,
+          "heal": 8,
+          "shield": 0.5,
+          "duration_s": 20,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2036,7 +2536,7 @@
         "notes": "WILD Pokémon get +20 SPEED, and can now be found in shops at every stage (8% base chance + +0.5% for each WILD STAR on board)."
       },
       {
-        "effect_id": "RUN_AWAY",
+        "effect_id": "SYNERGY__RUN_AWAY",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2044,7 +2544,12 @@
           "raw_numbers": [
             40
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 40,
+          "heal": null,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2052,7 +2557,7 @@
         "notes": "+40 SPEED."
       },
       {
-        "effect_id": "HUSTLE",
+        "effect_id": "SYNERGY__HUSTLE",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2061,7 +2566,12 @@
             40,
             40
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 40,
+          "heal": 40,
+          "shield": null,
+          "duration_s": null,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2069,7 +2579,7 @@
         "notes": "+40 SPEED and +40% base ATK"
       },
       {
-        "effect_id": "BERSERK",
+        "effect_id": "SYNERGY__BERSERK",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2079,7 +2589,12 @@
             30,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 30,
+          "heal": 30,
+          "shield": 3,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2100,7 +2615,7 @@
     ],
     "bonuses": [
       {
-        "effect_id": "FLUID",
+        "effect_id": "SYNERGY__FLUID",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2109,7 +2624,12 @@
             1,
             3
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 1,
+          "heal": 3,
+          "shield": null,
+          "duration_s": 1,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2117,7 +2637,7 @@
         "notes": "Ally team gains 1 SPEED and 3 HP per unique active synergy"
       },
       {
-        "effect_id": "SHAPELESS",
+        "effect_id": "SYNERGY__SHAPELESS",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2126,7 +2646,12 @@
             3,
             6
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 3,
+          "heal": 6,
+          "shield": null,
+          "duration_s": 3,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,
@@ -2134,7 +2659,7 @@
         "notes": "Ally team gains 3 SPEED and 6 HP per unique active synergy"
       },
       {
-        "effect_id": "ETHEREAL",
+        "effect_id": "SYNERGY__ETHEREAL",
         "source_type": "synergy",
         "trigger": "passive",
         "targeting": "contextual",
@@ -2143,7 +2668,12 @@
             6,
             12
           ],
-          "inferred_from_text": true
+          "inferred_from_text": true,
+          "damage": 6,
+          "heal": 12,
+          "shield": null,
+          "duration_s": 6,
+          "status": false
         },
         "cooldown": null,
         "mana_cost": null,

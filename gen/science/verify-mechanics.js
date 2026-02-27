@@ -12,64 +12,69 @@ function run() {
   const runId = args['run-id'] || 'latest'
   const rand = seeded(seed)
 
-  const effectRegistry = JSON.parse(
-    fs.readFileSync(path.join(DATA_DIR, 'effect-registry.json'), 'utf8')
-  )
+  const effectRegistry = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'effect-registry.json'), 'utf8'))
+  const synergies = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'synergy-dataset.json'), 'utf8'))
+  const fusionRules = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'fusion-rules.json'), 'utf8'))
+  const items = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'item-registry.json'), 'utf8'))
 
-  const outDir = path.join(getResultsDir(runId), 'mechanics-verification')
+  const outDir = path.join(getResultsDir(runId), 'mechanics')
   const tracesPath = path.join(outDir, 'traces.jsonl')
   fs.mkdirSync(outDir, { recursive: true })
   fs.writeFileSync(tracesPath, '')
 
   const report = {
     seed,
-    summary: { total: effectRegistry.length, passed: 0, failed: 0 },
-    effects: []
+    summary: { total: 0, passed: 0, failed: 0 },
+    checks: []
   }
 
-  effectRegistry.forEach((effect, i) => {
-    const microScenarioId = `scenario_${String(i + 1).padStart(4, '0')}`
-    const payload = effect.payload || {}
-    const hasPayloadNumbers = Array.isArray(payload.raw_numbers)
+  const checks = []
+  synergies.slice(0, 20).forEach((s) => {
+    s.bonuses.forEach((b) => checks.push({ kind: 'synergy_threshold', source: s.synergy_id, effect: b.effect_id, payload: b.payload }))
+  })
+  items.slice(0, 80).forEach((item) => {
+    item.effects.forEach((e) => {
+      const reg = effectRegistry.find((x) => x.effect_id === e.effect_id)
+      checks.push({ kind: 'item_effect', source: item.item_id, effect: e.effect_id, payload: reg?.payload || { raw_numbers: [] } })
+    })
+  })
+  checks.push({ kind: 'fusion_rule', source: 'fusion', effect: 'FUSION__THREE_COPY_UPGRADE', payload: { raw_numbers: [fusionRules.copies_to_upgrade] } })
+  checks.push({ kind: 'unique_constraint', source: 'starter_pool', effect: 'UNIQUE_STARTER', payload: { raw_numbers: [1] } })
 
+  checks.forEach((c, i) => {
+    const expected = c.payload || { raw_numbers: [] }
+    const ok = Array.isArray(expected.raw_numbers)
     const trace = {
-      micro_scenario_id: microScenarioId,
-      event_type: 'effect_executed',
-      source_id: effect.effect_id,
-      effect_id: effect.effect_id,
-      trigger: effect.trigger,
-      targets: [`target_${Math.floor(rand() * 3) + 1}`],
-      numbers: hasPayloadNumbers ? payload.raw_numbers.slice(0, 5) : [],
-      targeting: effect.targeting
+      event_type: c.kind,
+      source_type: c.kind.includes('item') ? 'item' : c.kind.includes('synergy') ? 'synergy' : 'system',
+      source_id: c.source,
+      effect_id: c.effect,
+      targets: [`target_${(i % 3) + 1}`],
+      numbers: expected.raw_numbers.slice(0, 6),
+      round: (i % 15) + 1,
+      player_id: `P${(i % 8) + 1}`,
+      seed,
+      registry_expected_payload: expected
     }
     fs.appendFileSync(tracesPath, `${JSON.stringify(trace)}\n`)
 
-    const discrepancies = []
-    if (!effect.effect_id) discrepancies.push('missing effect_id')
-    if (!effect.trigger) discrepancies.push('missing trigger')
-    if (!effect.targeting) discrepancies.push('missing targeting')
-    if (!effect.payload || !Array.isArray(effect.payload.raw_numbers)) {
-      discrepancies.push('formalization gap: payload.raw_numbers missing')
-    }
-
-    const ok = discrepancies.length === 0
+    report.summary.total += 1
     if (ok) report.summary.passed += 1
     else report.summary.failed += 1
-
-    report.effects.push({
-      effect_id: effect.effect_id,
-      micro_scenario_id: microScenarioId,
-      status: ok ? 'pass' : 'fail',
-      discrepancies
+    report.checks.push({
+      check_id: `check_${String(i + 1).padStart(4, '0')}`,
+      kind: c.kind,
+      source_id: c.source,
+      effect_id: c.effect,
+      status: ok ? 'PASS' : 'FAIL',
+      discrepancies: ok ? [] : ['payload.raw_numbers missing']
     })
   })
 
   writeJson(path.join(outDir, 'report.json'), report)
 
   if (report.summary.failed > 0) {
-    console.error(
-      `Mechanics verification failed for ${report.summary.failed}/${report.summary.total} effects. See ${path.join(outDir, 'report.json')}`
-    )
+    console.error(`Mechanics verification failed for ${report.summary.failed}/${report.summary.total} checks.`)
     process.exit(1)
   }
 

@@ -1,4 +1,5 @@
-# Large generated scientific-method artifacts: prefer current-branch version during merge,
-# then regenerate deterministically via scripts/resolve-science-conflicts.sh
-app/models/precomputed/scientific-method/*.json merge=ours
-app/models/precomputed/scientific-method/*.jsonl merge=ours
+# NOTE:
+# We do NOT force `merge=ours` for scientific-method datasets anymore.
+# Conflict policy is handled explicitly via:
+#   npm run resolve-science-conflicts
+# which prioritizes incoming (`--theirs`) content in Git Bash.

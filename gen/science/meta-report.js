@@ -17,6 +17,9 @@ function run() {
   const placements = Object.fromEntries(policies.map((p) => [p, []]))
   const top4 = Object.fromEntries(policies.map((p) => [p, 0]))
   const compOpeners = {}
+  const itemizations = {}
+  const synergyRates = {}
+  const fusionTiming = {}
 
   for (let i = 0; i < lobbies; i++) {
     const policySet = Array.from({ length: 8 }, (_, idx) => policies[idx % policies.length])
@@ -30,12 +33,17 @@ function run() {
     lobby.final_standings.forEach((p) => {
       placements[p.policy_id].push(p.placement)
       if (p.top4) top4[p.policy_id] += 1
-      const opener =
-        (p.timeline.find((e) => e.phase === 'economy_shop')?.bought || [])
-          .slice(0, 2)
-          .join('+') || 'NONE'
+      const econEvents = p.timeline.filter((e) => e.phase === 'economy_shop')
+      const opener = (econEvents[0]?.bought || []).slice(0, 2).join('+') || 'NONE'
       const k = `${p.policy_id}::${opener}`
       compOpeners[k] = (compOpeners[k] || 0) + 1
+      econEvents.forEach((e, idx) => {
+        const ik = `${p.policy_id}::equip_${e.equipped || 0}`
+        itemizations[ik] = (itemizations[ik] || 0) + 1
+        const sk = `round_${e.round}`
+        synergyRates[sk] = (synergyRates[sk] || 0) + (e.synergy_types_active || 0)
+        if ((e.bought || []).length < 1 && idx > 2) fusionTiming[e.round] = (fusionTiming[e.round] || 0) + 1
+      })
     })
   }
 
@@ -70,6 +78,9 @@ function run() {
   })
 
   const report = {
+    common_itemizations_by_policy: Object.entries(itemizations).sort((a,b)=>b[1]-a[1]).slice(0,60).map(([k,frequency])=>{const [policy_id,itemization]=k.split('::'); return {policy_id,itemization,frequency}}),
+    synergy_activation_rates_over_time: Object.entries(synergyRates).map(([round,total])=>({round:Number(round.replace('round_','')), avg_active_synergies: total/Math.max(1,lobbies*8)})).sort((a,b)=>a.round-b.round),
+    fusion_frequency_timing: Object.entries(fusionTiming).map(([round,count])=>({round:Number(round), count})).sort((a,b)=>a.round-b.round),
     seed,
     lobbies,
     policy_tier_list: policyTierList,

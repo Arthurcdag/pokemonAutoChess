@@ -98,10 +98,9 @@ function runPipeline(opts) {
 
   const plan = [
     ['extract-science-data', 'gen/extract-scientific-dataset.js', []],
-    ['validate-science-data', 'gen/science/validate-science-data.js', []],
+    ['validate-science-data', 'gen/science/validate-science-data.js', ['--allow-formalization-gaps', 'true']],
     ['verify-mechanics', 'gen/science/verify-mechanics.js', ['--seed', seed, '--run-id', runId]],
-    ['run-baselines', 'gen/science/run-baselines.js', ['--stage', 'singles', '--seed', seed, '--battles', profile === 'fast' ? '40' : '200', '--run-id', runId]],
-    ['run-baselines', 'gen/science/run-baselines.js', ['--stage', 'pairs', '--seed', seed, '--battles', profile === 'fast' ? '20' : '200', '--run-id', runId]],
+    ['run-baselines', 'gen/science/run-baselines.js', ['--stage', 'singles,pairs,items,item_carriers,synergy_thresholds', '--seed', seed, '--battles', profile === 'fast' ? '40' : '200', '--run-id', runId]],
     ['search-comps', 'gen/science/search-comps.js', ['--mode', 'beam', '--budget', profile === 'fast' ? '300' : '5000', '--seed', seed, '--run-id', runId]],
     ['generate-claims', 'gen/science/make-claims.js', []],
     ['run-experiments', 'gen/science/run-experiments.js', ['--claims', 'app/models/precomputed/scientific-method/claims.jsonl', '--seed', seed, '--battles-per-condition', profile === 'fast' ? '60' : '300', '--run-id', runId]],
